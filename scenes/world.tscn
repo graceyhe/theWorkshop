@@ -1,0 +1,354 @@
+[gd_scene load_steps=42 format=3 uid="uid://biai6syjdsjeo"]
+
+[ext_resource type="Script" path="res://assets/3d models/workshop.gd" id="2_8mehk"]
+[ext_resource type="PackedScene" uid="uid://dv3odnwwqttp8" path="res://scenes/player.tscn" id="2_nnwqj"]
+[ext_resource type="Gradient" uid="uid://orjh07tkcivg" path="res://assets/textures/flame/Fire.tres" id="3_mpk82"]
+[ext_resource type="Texture2D" uid="uid://emjbw3dda28r" path="res://assets/textures/flame/flame_sprite_sheet.png" id="4_avqcv"]
+[ext_resource type="Texture2D" uid="uid://rsyk4yihu0js" path="res://assets/textures/flame/Spark.png" id="5_ghjkl"]
+[ext_resource type="Gradient" path="res://assets/textures/flame/SparksGradient.tres" id="5_wddon"]
+[ext_resource type="PackedScene" uid="uid://br4wcyohi2sba" path="res://scenes/HUD.tscn" id="7_cg3ch"]
+[ext_resource type="PackedScene" uid="uid://cetmlxe2wqj76" path="res://assets/objFiles/workshop.dae" id="7_wc8cc"]
+[ext_resource type="PackedScene" uid="uid://pbmqf3tx4efj" path="res://assets/3d models/blade.blend" id="9_d67aj"]
+[ext_resource type="Script" path="res://scenes/inFurnace.gd" id="10_01uqa"]
+[ext_resource type="PackedScene" uid="uid://b13nstl35ev7l" path="res://assets/3d models/metal.blend" id="10_4g6up"]
+[ext_resource type="PackedScene" uid="uid://dv55renfksful" path="res://assets/3d models/sword.blend" id="12_1ep3n"]
+[ext_resource type="Script" path="res://scenes/onAnvil.gd" id="12_o8md1"]
+[ext_resource type="Script" path="res://scenes/Skillcheck.gd" id="14_lo31y"]
+[ext_resource type="Texture2D" uid="uid://hqmd00aeru8g" path="res://assets/textures/up.png" id="15_5ltx3"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y865v"]
+gradient = ExtResource("3_mpk82")
+
+[sub_resource type="Curve" id="Curve_x0vpd"]
+_data = [Vector2(0, 0.156737), 0.0, 0.0, 0, 0, Vector2(0.491865, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.156737), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_n3cjh"]
+curve = SubResource("Curve_x0vpd")
+
+[sub_resource type="Curve" id="Curve_36sn4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.104664, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0418849), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tnndx"]
+curve = SubResource("Curve_36sn4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q2gx0"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+angle_min = 1.0
+angle_max = 260.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+angular_velocity_min = 40.0
+angular_velocity_max = 360.0
+gravity = Vector3(0, 0, 0)
+scale_max = 1.6
+scale_curve = SubResource("CurveTexture_tnndx")
+color_ramp = SubResource("GradientTexture1D_y865v")
+emission_curve = SubResource("CurveTexture_n3cjh")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_min = 1.0
+anim_offset_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ap6f"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_avqcv")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 5
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mpij0"]
+material = SubResource("StandardMaterial3D_8ap6f")
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mk1kx"]
+gradient = ExtResource("5_wddon")
+
+[sub_resource type="Curve" id="Curve_khqbr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_s4w0u"]
+curve = SubResource("Curve_khqbr")
+
+[sub_resource type="Curve" id="Curve_djdqk"]
+_data = [Vector2(0, 0.50156), 0.0, 0.0, 0, 0, Vector2(0.500626, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kcurg"]
+curve = SubResource("Curve_djdqk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_emgbp"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.6
+direction = Vector3(0, 1, 0)
+spread = 40.0
+flatness = 0.24
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 5.0
+linear_accel_max = 6.0
+tangential_accel_min = 1.0
+tangential_accel_max = 1.0
+damping_min = 2.0
+damping_max = 3.0
+scale_min = 0.1
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_kcurg")
+color_ramp = SubResource("GradientTexture1D_mk1kx")
+emission_curve = SubResource("CurveTexture_s4w0u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0spfl"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_ghjkl")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3a7ph"]
+material = SubResource("StandardMaterial3D_0spfl")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="Sky" id="Sky_l46t0"]
+
+[sub_resource type="Environment" id="Environment_an7gn"]
+sky = SubResource("Sky_l46t0")
+glow_enabled = true
+glow_blend_mode = 0
+volumetric_fog_density = 0.01
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_40bnq"]
+emission_shape_scale = Vector3(5, 1, 10)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2thde"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.454902, 0.760784, 1, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_jw4ya"]
+material = SubResource("StandardMaterial3D_2thde")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukoio"]
+albedo_color = Color(0, 0.0666667, 0.0509804, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lf3fa"]
+material = SubResource("StandardMaterial3D_ukoio")
+size = Vector2(100, 100)
+orientation = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qjh77"]
+angle_max = 45.0
+direction = Vector3(1, 1, 1)
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, -2, 0)
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv3bt"]
+blend_mode = 1
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 0.576471, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_m742b"]
+material = SubResource("StandardMaterial3D_sv3bt")
+size = Vector2(0.05, 0.05)
+
+[node name="world" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132561, 5.47528, -1.6639)
+light_color = Color(1, 0.745098, 0.392157, 1)
+light_energy = 7.0
+
+[node name="player" parent="." instance=ExtResource("2_nnwqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.842316, 2.76821, -4.10282)
+
+[node name="fireEffect" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54103, 6.55207)
+
+[node name="Flames" type="GPUParticles3D" parent="fireEffect"]
+transform = Transform3D(0.379196, 0, 0, 0, 1, 0, 0, 0, 0.248965, 0, 0, 0.48098)
+amount = 100
+lifetime = 0.5
+randomness = 1.0
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_q2gx0")
+draw_pass_1 = SubResource("QuadMesh_mpij0")
+
+[node name="Sparks" type="GPUParticles3D" parent="fireEffect/Flames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47103, 0)
+amount = 16
+lifetime = 0.5
+randomness = 1.0
+draw_order = 3
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_emgbp")
+draw_pass_1 = SubResource("QuadMesh_3a7ph")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_an7gn")
+
+[node name="HUD" parent="." instance=ExtResource("7_cg3ch")]
+
+[node name="workshop" parent="." instance=ExtResource("7_wc8cc")]
+script = ExtResource("2_8mehk")
+
+[node name="inFurnace" type="Node3D" parent="."]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 1.85537, 5.5084)
+script = ExtResource("10_01uqa")
+
+[node name="iron" parent="inFurnace" instance=ExtResource("10_4g6up")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98655e-08, 0, -0.264017)
+visible = false
+
+[node name="blade" parent="inFurnace" instance=ExtResource("9_d67aj")]
+visible = false
+
+[node name="Timer" type="Timer" parent="inFurnace"]
+
+[node name="onAnvil" type="Node3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 3.03346, 0)
+script = ExtResource("12_o8md1")
+
+[node name="blade" parent="onAnvil" instance=ExtResource("9_d67aj")]
+visible = false
+
+[node name="sword" parent="onAnvil" instance=ExtResource("12_1ep3n")]
+visible = false
+
+[node name="Timer" type="Timer" parent="onAnvil"]
+
+[node name="Skillcheck" type="Node2D" parent="onAnvil"]
+script = ExtResource("14_lo31y")
+
+[node name="Control" type="Control" parent="onAnvil/Skillcheck"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="onAnvil/Skillcheck/Control"]
+visible = false
+
+[node name="GridContainer" type="GridContainer" parent="onAnvil/Skillcheck/Control/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.383681
+anchor_top = 0.236111
+anchor_right = 0.614583
+anchor_bottom = 0.313272
+grow_horizontal = 2
+size_flags_horizontal = 4
+columns = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Panel" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer/1"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_5ltx3")
+centered = false
+
+[node name="2" type="Panel" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer/2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_5ltx3")
+centered = false
+
+[node name="3" type="Panel" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer/3"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_5ltx3")
+centered = false
+
+[node name="4" type="Panel" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer/4"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_5ltx3")
+centered = false
+
+[node name="5" type="Panel" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="onAnvil/Skillcheck/Control/CanvasLayer/GridContainer/5"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_5ltx3")
+centered = false
+
+[node name="Timer" type="Timer" parent="onAnvil/Skillcheck"]
+wait_time = 0.6
+one_shot = true
+
+[node name="Rain" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.12294, 0, 0, 0, 1.23621, 0, 0, 0, 2.86282, 16.2987, 11.091, -1.06556)
+amount = 750
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_40bnq")
+draw_pass_1 = SubResource("QuadMesh_jw4ya")
+
+[node name="Terrain" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_lf3fa")
+
+[node name="Sparks" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.319636, 0, 0, 0, 0.359152, 0, 0, 0, 0.37096, -1.18639, 3.18394, 0)
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.76
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_qjh77")
+draw_pass_1 = SubResource("QuadMesh_m742b")
+
+[connection signal="timeout" from="inFurnace/Timer" to="inFurnace" method="_on_timer_timeout"]
+[connection signal="timeout" from="onAnvil/Timer" to="onAnvil" method="_on_timer_timeout"]
+[connection signal="timeout" from="onAnvil/Skillcheck/Timer" to="onAnvil/Skillcheck" method="_on_timer_timeout"]
+[connection signal="finished" from="Sparks" to="onAnvil/Skillcheck" method="_on_sparks_finished"]

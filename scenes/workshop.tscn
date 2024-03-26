@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3wf60cey7rjo"]
+
+[ext_resource type="PackedScene" uid="uid://cejmdge4eusu3" path="res://assets/3d models/workshop.blend" id="1_xwo1y"]
+
+[node name="workshop" instance=ExtResource("1_xwo1y")]
+
+[node name="Point" parent="." index="5"]
+visible = false
+
+[node name="Point_001" parent="." index="7"]
+visible = false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://deyh0pxw5x3sb"
+path="res://.godot/imported/workshop.obj-389aa725283119c692d26bc9601790f2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/workshop.obj-389aa725283119c692d26bc9601790f2.mesh"]
+
+source_file="res://assets/objFiles/workshop.obj"
+dest_files=["res://.godot/imported/workshop.obj-389aa725283119c692d26bc9601790f2.mesh", "res://.godot/imported/workshop.obj-389aa725283119c692d26bc9601790f2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

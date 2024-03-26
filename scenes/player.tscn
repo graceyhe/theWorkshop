@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv3odnwwqttp8"]
+
+[ext_resource type="Script" path="res://scenes/PlayerBody.gd" id="1_h4po4"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_inxua"]
+[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_elw5y"]
+[ext_resource type="PackedScene" uid="uid://dv55renfksful" path="res://assets/3d models/sword.blend" id="3_toosm"]
+[ext_resource type="PackedScene" uid="uid://b13nstl35ev7l" path="res://assets/3d models/metal.blend" id="4_sis58"]
+[ext_resource type="PackedScene" uid="uid://bsrk8e5bvk5gv" path="res://assets/3d models/hammer.blend" id="6_6cup2"]
+[ext_resource type="PackedScene" uid="uid://pbmqf3tx4efj" path="res://assets/3d models/blade.blend" id="7_73vj2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l066"]
+size = Vector3(1, 3, 1)
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_inxua")
+
+[node name="PlayerBody" type="CharacterBody3D" parent="."]
+slide_on_ceiling = false
+wall_min_slide_angle = 0.523599
+floor_stop_on_slope = false
+script = ExtResource("1_h4po4")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56715, 0)
+shape = SubResource("BoxShape3D_0l066")
+
+[node name="Camera" type="Camera3D" parent="PlayerBody"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 4.25, 0)
+script = ExtResource("2_elw5y")
+
+[node name="Inventory" type="Node3D" parent="PlayerBody/Camera"]
+transform = Transform3D(0.410686, -0.911714, 0.0107346, 0.409015, 0.173695, -0.895844, 0.814889, 0.372301, 0.444239, 0.866133, -0.537367, -1.43898)
+
+[node name="sword" parent="PlayerBody/Camera/Inventory" instance=ExtResource("3_toosm")]
+transform = Transform3D(1.766, -4.49629e-09, 2.46372e-08, 7.25155e-09, 1.095, 0, -2.90062e-08, 7.38507e-17, 1.5, 0, 0, 0)
+visible = false
+
+[node name="iron" parent="PlayerBody/Camera/Inventory" instance=ExtResource("4_sis58")]
+visible = false
+
+[node name="hammer" parent="PlayerBody/Camera/Inventory" instance=ExtResource("6_6cup2")]
+visible = false
+
+[node name="blade" parent="PlayerBody/Camera/Inventory" instance=ExtResource("7_73vj2")]
+visible = false

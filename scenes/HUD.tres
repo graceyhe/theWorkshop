@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dd53wibsidi8e"]
+
+[ext_resource type="FontFile" uid="uid://1oyqf8wqvmy5" path="res://assets/fonts/Bakemono-Stereo-Regular-trial.ttf" id="1_kmytd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2aimm"]
+content_margin_right = 8.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 8.0
+
+[resource]
+Label/fonts/font = ExtResource("1_kmytd")
+Label/styles/normal = SubResource("StyleBoxFlat_2aimm")

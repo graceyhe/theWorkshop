@@ -1,0 +1,166 @@
+# Blender 3.3.1 MTL File: 'workshop.blend'
+# www.blender.org
+
+newmtl AnvilMetal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/metal/MetalGalvanizedSteelWorn001_ROUGHNESS_2K_METALNESS.jpg
+
+newmtl BarrelMetal
+Ns 250.000000
+Ka 0.117647 0.117647 0.117647
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/barrel_metal_bake.png
+
+newmtl BarrelWood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/barrel_wood_bake.png
+map_Bump -bm 1.000000 C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/WoodPlanksWorn001_NRM16_2K.tif
+
+newmtl Brick
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/brick_baked.png
+map_Bump -bm 1.000000 C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/bricks/StoneBricksSplitface001_NRM_2K.png
+
+newmtl Dirt
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/dirt/GroundDirtRocky020_COL_2K.jpg
+
+newmtl Material.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl Material.018
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.298184 0.298184 0.298184
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Material.019
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.298185 0.131558 0.003166
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Water
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.017043 0.069312 0.288324
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.042424
+illum 9
+
+newmtl Wood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.107565 0.107565 0.107565
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 4 4 1 C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/wood_bake.png
+map_Bump -s 4 4 1 -bm 1.000000 C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/wood/WoodPlanksWorn001_NRM_2K.jpg
+
+newmtl classicWood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/tool_board_bake.png
+
+newmtl flatMetal
+Ns 250.000000
+Ka 0.375758 0.375758 0.375758
+Kd 0.356757 0.356757 0.356757
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl lightWood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/morewood/oak_veneer_01_diff_4k.png
+
+newmtl pureMetal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/metal/MetalGalvanizedSteelWorn001_ROUGHNESS_2K_METALNESS.jpg
+
+newmtl second_barrel_wood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/second_barrel_wood_bake.png
+
+newmtl tableWood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/Grace He/Desktop/TheWorkshop/assets/baked_textures/table_bake.png
+map_Bump -bm 1.000000 C:/Users/Grace He/Desktop/TheWorkshop/assets/textures/WoodPlanksWorn001_NRM16_2K.tif

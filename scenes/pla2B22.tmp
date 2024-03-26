@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv3odnwwqttp8"]
+
+[ext_resource type="Script" path="res://scenes/PlayerBody.gd" id="1_h4po4"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_inxua"]
+[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_elw5y"]
+[ext_resource type="PackedScene" uid="uid://dv55renfksful" path="res://assets/3d models/sword.blend" id="3_toosm"]
+[ext_resource type="PackedScene" uid="uid://b13nstl35ev7l" path="res://assets/3d models/metal.blend" id="4_sis58"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l066"]
+size = Vector3(1, 3.125, 1)
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_inxua")
+
+[node name="PlayerBody" type="CharacterBody3D" parent="."]
+script = ExtResource("1_h4po4")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56715, 0)
+shape = SubResource("BoxShape3D_0l066")
+
+[node name="Camera" type="Camera3D" parent="PlayerBody"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 4.25, 0)
+script = ExtResource("2_elw5y")
+
+[node name="Inventory" type="Node3D" parent="PlayerBody/Camera"]
+transform = Transform3D(0.999022, 6.51329e-08, -0.0442121, -0.0329395, 0.667027, -0.744305, 0.0294906, 0.745034, 0.666375, 0.322423, -0.587896, -1.45984)
+
+[node name="sword" parent="PlayerBody/Camera/Inventory" instance=ExtResource("3_toosm")]
+transform = Transform3D(1, 9.31323e-09, 2.23517e-08, 1.30385e-08, 1, 0, -1.86265e-09, -2.98023e-08, 1, 0, 0, 0)
+
+[node name="metal" parent="PlayerBody/Camera/Inventory" instance=ExtResource("4_sis58")]
+visible = false
